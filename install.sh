@@ -49,6 +49,19 @@ sudo apt install curl -y
 # Instala o exa via apt install
 sudo apt install exa -y
 
+# Instala o chrome via apt install
+ #Baixar o pacote de instalação do Google Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+#Instalar o Google Chrome usando o dpkg
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+# Instalar as dependências faltantes
+sudo apt-get -f install
+
+# Remover o pacote de instalação do Google Chrome
+rm google-chrome-stable_current_amd64.deb
+
 # Instala o git via apt install
 sudo apt install git
 git config --global user.name "fhilippedev"
@@ -89,6 +102,12 @@ sudo apt update -y
 # Instalar o Microsoft Edge
 sudo apt install microsoft-edge-beta -y 
 
+# Instalar o spotify
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update -y && sudo apt-get install spotify-client -y
+
+
 # Instala o flatpak
 sudo apt install flatpak -y
 sudo apt install gnome-software-plugin-flatpak -y
@@ -98,4 +117,6 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echo
 echo "Instalação concluída com sucesso!"
 echo
-reboot
+
+ sudo apt-get clean
+sudo reboot
