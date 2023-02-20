@@ -87,6 +87,20 @@ wget https://download.teamviewer.com/download/linux/teamviewer_amd64.deb
 sudo dpkg -i teamviewer_amd64.deb
 sudo apt install -f
 
+# Instala o balena etcher via apt install
+# Adicionar repositório do Balena Etcher
+echo "Adicionando repositório do Balena Etcher..."
+echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+
+# Atualizar lista de pacotes
+echo "Atualizando lista de pacotes..."
+sudo apt update
+
+# Instalar Balena Etcher
+echo "Instalando Balena Etcher..."
+sudo apt install balena-etcher-electron
+
 # Instala o edge via apt install
 # Adicionar a chave do repositório do Microsoft Edge
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
