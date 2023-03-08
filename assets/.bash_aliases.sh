@@ -1,0 +1,15 @@
+alias up-full='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade'
+alias up-full-r='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade && reboot'
+alias up-full-p='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade && poweroff'
+alias cat='batcat'
+alias ls='exa'
+alias ..='cd ..'
+alias cl='clear'
+alias nf='neofetch'
+alias ex='exit'
+alias start-lara='php artisan serve'
+alias artisan='php artisan'
+alias apti='sudo apt install'  # instala um pacote com o apt
+alias aptr='sudo apt remove'
+alias aptc='sudo apt autoclean'  # limpa os arquivos de cache dos pacotes
+alias aptrc='sudo apt-get autoremove'  # remove pacotes que não são mais necessários

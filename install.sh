@@ -46,6 +46,9 @@ sudo apt install codium -y
 # Instala o curl via apt install
 sudo apt install curl -y
 
+# Instala o batcat via apt install
+sudo apt install bat -y
+
 # Instala o exa via apt install
 sudo apt install exa -y
 
@@ -131,6 +134,12 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 echo
 echo "Instalação concluída com sucesso!"
 echo
+echo
+echo "Configurando ALIASES!"
+echo
+
+cp .bash_aliases.sh ~/
+source .bash_aliases.sh
 
  sudo apt-get clean
 sudo reboot
