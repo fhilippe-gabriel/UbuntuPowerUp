@@ -138,7 +138,7 @@ echo
 echo "Configurando ALIASES!"
 echo
 
-cp .bash_aliases.sh ~/
+cp assets/.bash_aliases ~/
 source .bash_aliases.sh
 
  sudo apt-get clean
