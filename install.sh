@@ -106,12 +106,6 @@ sudo dpkg -i teamviewer_amd64.deb
 sudo apt install -f
 rm -rf teamviewer_amd64.deb
 
-# Instala o balena etcher via apt install
-# Adicionar repositório do Balena Etcher
-echo "Adicionando repositório do Balena Etcher..."
-echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
-
 # Atualizar lista de pacotes
 echo "Atualizando lista de pacotes..."
 sudo apt update -y
@@ -178,7 +172,6 @@ cd gnome-terminal/
 echo
 echo "  Configurando Spacechip!"
 echo
-
 
 git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
 
