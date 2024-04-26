@@ -9,6 +9,7 @@ alias cl='clear'
 alias nf='neofetch'
 alias ex='exit'
 alias start-lara='php artisan serve'
+alias nrj='npm run start'
 alias artisan='php artisan'
 alias apti='sudo apt install'  # instala um pacote com o apt
 alias aptr='sudo apt remove'
