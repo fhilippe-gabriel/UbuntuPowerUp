@@ -55,8 +55,8 @@ sudo apt install curl -y
 # Instala o batcat via apt install
 sudo apt install bat -y
 
-# Instala o exa via apt install
-sudo apt install exa -y
+# Instala o eza via apt install
+sudo apt install eza -y
 
 # Instala o git via apt install
 sudo apt install git -y
