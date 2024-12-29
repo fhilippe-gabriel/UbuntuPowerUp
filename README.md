@@ -1,58 +1,20 @@
-fhilippe-gabriel: Crie um readme para o repositorio do github, descrevendo da melhor forma possivel os scripts abaixo, que foi feito pensando nos sistemas com base no ubuntu, e as formas de execução
-
-Workspace: Coletando informações do workspace
-
 # script-install-ubuntu
 
 Este repositório contém uma coleção de scripts para automatizar a instalação e configuração de softwares em sistemas baseados no Ubuntu. Os scripts cobrem a instalação de pacotes via Snap, Flatpak e APT, além de configurar o ambiente ZSH com Oh My Zsh e temas personalizados.
 
 ## Estrutura do Repositório
 
--
-
-assets
-
--
-
-.bash_aliases
-
-: Arquivo de aliases personalizados para o terminal.
-
--
-
-.zshrc
-
-: Arquivo de configuração do ZSH.
-
--
-
-ConfigrarZSH.sh
-
-: Script para configurar o ZSH com Oh My Zsh e o tema Spaceship.
-
--
-
-flatpak.sh
-
-: Script para instalar aplicativos via Flatpak.
-
--
-
-install.sh
-
-: Script principal para instalar pacotes via Snap e APT, além de configurar aliases e o ZSH.
-
--
-
-README.md
-
-: Este arquivo.
+- **assets**
+  - **.bash_aliases**: Arquivo de aliases personalizados para o terminal.
+  - **.zshrc**: Arquivo de configuração do ZSH.
+- **ConfigrarZSH.sh**: Script para configurar o ZSH com Oh My Zsh e o tema Spaceship.
+- **flatpak.sh**: Script para instalar aplicativos via Flatpak.
+- **install.sh**: Script principal para instalar pacotes via Snap e APT, além de configurar aliases e o ZSH.
+- **README.md**: Este arquivo.
 
 ## Scripts
 
-###
-
-install.sh
+### install.sh
 
 Este script realiza a instalação de diversos pacotes utilizando Snap e APT, além de configurar aliases e o ZSH.
 
@@ -81,23 +43,16 @@ Este script realiza a instalação de diversos pacotes utilizando Snap e APT, al
 
 #### Configurações Adicionais
 
-- Copia o arquivo
-
-.bash_aliases
-
-para o diretório home do usuário.
-
+- Copia o arquivo **.bash_aliases** para o diretório home do usuário.
 - Configura o ZSH com Oh My Zsh.
 
 #### Execução
 
 ```sh
-sudo bash install.sh
+.\install.sh
 ```
 
-###
-
-flatpak.sh
+### flatpak.sh
 
 Este script instala diversos aplicativos utilizando o Flatpak.
 
@@ -116,50 +71,49 @@ Este script instala diversos aplicativos utilizando o Flatpak.
 #### Execução
 
 ```sh
-sudo bash flatpak.sh
+.\flatpak.sh
 ```
 
-###
-
-ConfigrarZSH.sh
+### ConfigrarZSH.sh
 
 Este script configura o ZSH com Oh My Zsh e o tema Spaceship, além de instalar plugins adicionais.
 
 #### Execução
 
 ```sh
-bash ConfigrarZSH.sh
+.\ConfigrarZSH.sh
 ```
 
 ## Arquivos de Configuração
 
-###
-
-.bash_aliases
+### .bash_aliases
 
 Contém aliases personalizados para facilitar o uso do terminal.
 
-###
-
-.zshrc
+### .zshrc
 
 Arquivo de configuração do ZSH com o tema Spaceship e plugins adicionais.
 
 ## Como Executar
 
-1. Clone o repositório:
+1.  Clone o repositório:
 
-   ```sh
-   git clone <URL_DO_REPOSITORIO>
-   cd script-install-ubuntu
-   ```
+            ```sh
+            git clone <URL_DO_REPOSITORIO>
+            cd script-install-ubuntu
+            ```
 
-2. Execute os scripts conforme necessário:
-   ```sh
-   sudo bash install.sh
-   sudo bash flatpak.sh
-   bash ConfigrarZSH.sh
-   ```
+    ou
+    `sh
+        gh repo clone fhilippe-gabriel/script-install-ubuntu
+        `
+
+2.  Execute os scripts conforme necessário:
+    `sh
+    sudo bash install.sh
+    sudo bash flatpak.sh
+    bash ConfigrarZSH.sh
+    `
 
 ## Contribuição
 
