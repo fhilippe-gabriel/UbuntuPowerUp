@@ -111,9 +111,9 @@ Arquivo de configuração do ZSH com o tema Spaceship e plugins adicionais.
 
 2.  Execute os scripts conforme necessário:
     ```
-    sudo bash install.sh
-    sudo bash flatpak.sh
-    bash ConfigrarZSH.sh
+    .\install.sh
+    .\flatpak.sh
+    .\ConfigrarZSH.sh
     ```
 
 ## Contribuição
