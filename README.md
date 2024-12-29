@@ -1,4 +1,4 @@
-# script-install-ubuntu
+# Configurar Ubuntu Workspace - Shell
 
 Este repositório contém uma coleção de scripts para automatizar a instalação e configuração de softwares em sistemas baseados no Ubuntu. Os scripts cobrem a instalação de pacotes via Snap, Flatpak e APT, além de configurar o ambiente ZSH com Oh My Zsh e temas personalizados.
 
@@ -105,15 +105,15 @@ Arquivo de configuração do ZSH com o tema Spaceship e plugins adicionais.
 
     ou
     `sh
-        gh repo clone fhilippe-gabriel/script-install-ubuntu
-        `
+    gh repo clone fhilippe-gabriel/script-install-ubuntu
+    `
 
 2.  Execute os scripts conforme necessário:
     `sh
-    sudo bash install.sh
-    sudo bash flatpak.sh
-    bash ConfigrarZSH.sh
-    `
+sudo bash install.sh
+sudo bash flatpak.sh
+bash ConfigrarZSH.sh
+`
 
 ## Contribuição
 
