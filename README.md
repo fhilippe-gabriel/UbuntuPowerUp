@@ -48,7 +48,7 @@ Este script realiza a instalação de diversos pacotes utilizando Snap e APT, al
 
 #### Execução
 
-```sh
+```
 .\install.sh
 ```
 
@@ -70,7 +70,7 @@ Este script instala diversos aplicativos utilizando o Flatpak.
 
 #### Execução
 
-```sh
+```
 .\flatpak.sh
 ```
 
@@ -80,7 +80,7 @@ Este script configura o ZSH com Oh My Zsh e o tema Spaceship, além de instalar 
 
 #### Execução
 
-```sh
+```
 .\ConfigrarZSH.sh
 ```
 
@@ -98,10 +98,10 @@ Arquivo de configuração do ZSH com o tema Spaceship e plugins adicionais.
 
 1.  Clone o repositório:
 
-            ```
-            git clone <URL_DO_REPOSITORIO>
-            cd script-install-ubuntu
-            ```
+    ```
+    git clone <URL_DO_REPOSITORIO>
+     cd script-install-ubuntu
+    ```
 
     ou
 
