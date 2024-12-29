@@ -98,15 +98,16 @@ Arquivo de configuração do ZSH com o tema Spaceship e plugins adicionais.
 
 1.  Clone o repositório:
 
-            ```sh
+            ```
             git clone <URL_DO_REPOSITORIO>
             cd script-install-ubuntu
             ```
 
     ou
-    `sh
+
+    ```
     gh repo clone fhilippe-gabriel/script-install-ubuntu
-    `
+    ```
 
 2.  Execute os scripts conforme necessário:
     `sh
