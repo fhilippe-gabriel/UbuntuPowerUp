@@ -13,6 +13,7 @@ alias cat='batcat'       # Usa o batcat (bat) em vez do cat, com syntax highligh
 alias ls='eza'           # Usa eza no lugar de ls, com melhor formatação
 alias nf='neofetch'      # Exibe as informações do sistema de forma visual
 alias ex='exit'          # Alias para sair do terminal
+alias cl='clear'          # Alias para limpar o terminal
 
 # === Comandos de Desenvolvimento ===
 alias start-lara='php artisan serve'  # Inicia o servidor Laravel
