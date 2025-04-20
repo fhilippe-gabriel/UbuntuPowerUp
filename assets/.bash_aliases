@@ -1,18 +1,31 @@
-alias up-full='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade'
-alias up-full-s='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade && systemctl suspend'
-alias up-full-r='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade && reboot'
-alias up-full-p='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade && poweroff'
-alias cat='batcat'
-alias ls='eza'
+# === Atualizações e Upgrade ===
+alias up-full='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y'
+alias up-full-s='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && systemctl suspend'
+alias up-full-r='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo reboot'
+alias up-full-p='sudo apt update && sudo apt upgrade -y && sudo apt full-upgrade -y && sudo apt dist-upgrade -y && sudo poweroff'
+
+# === Comandos de Navegação ===
 alias ..='cd ..'
-alias cl='clear'
-alias nf='neofetch'
-alias ex='exit'
-alias start-lara='php artisan serve'
-alias nrj='npm run start'
-alias artisan='php artisan'
-alias apti='sudo apt install'  # instala um pacote com o apt
-alias aptr='sudo apt remove'
-alias snapr='sudo snap remove'
-alias aptc='sudo apt autoclean'  # limpa os arquivos de cache dos pacotes
-alias aptrc='sudo apt-get autoremove'  # remove pacotes que não são mais necessários
+alias ~='cd ~'  # Vai para o diretório home
+
+# === Ferramentas e Comandos Úteis ===
+alias cat='batcat'       # Usa o batcat (bat) em vez do cat, com syntax highlighting
+alias ls='eza'           # Usa eza no lugar de ls, com melhor formatação
+alias nf='neofetch'      # Exibe as informações do sistema de forma visual
+alias ex='exit'          # Alias para sair do terminal
+
+# === Comandos de Desenvolvimento ===
+alias start-lara='php artisan serve'  # Inicia o servidor Laravel
+alias nrj='npm run start'             # Inicia o servidor do npm
+alias artisan='php artisan'           # Atalho para o comando artisan no Laravel
+
+# === Gerenciamento de Pacotes ===
+alias apti='sudo apt install -y'      # Instala pacotes com apt sem precisar confirmar
+alias aptr='sudo apt remove -y'       # Remove pacotes com apt sem precisar confirmar
+alias snapr='sudo snap remove'        # Remove pacotes Snap
+alias aptc='sudo apt autoclean -y'    # Limpa o cache de pacotes do apt
+alias aptrc='sudo apt-get autoremove -y'  # Remove pacotes desnecessários
+
+# === Alias para reinicialização e desligamento ===
+alias rb='sudo reboot'       # Alias para reiniciar
+alias pw='sudo poweroff'     # Alias para desligar

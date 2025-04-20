@@ -1,125 +1,127 @@
-# Configurar Ubuntu Workspace - Shell
+# 🚀 UbuntuPowerUp - Boost your Ubuntu in minutes! 🌟
 
-Este repositório contém uma coleção de scripts para automatizar a instalação e configuração de softwares em sistemas baseados no Ubuntu. Os scripts cobrem a instalação de pacotes via Snap, Flatpak e APT, além de configurar o ambiente ZSH com Oh My Zsh e temas personalizados.
+🇧🇷 Um conjunto de scripts para turbinar seu Ubuntu com os melhores apps, temas e produtividade.  
+🇺🇸 A script suite to supercharge your Ubuntu with the best apps, themes, and terminal productivity.
 
-## Estrutura do Repositório
+---
 
-- **assets**
-  - **.bash_aliases**: Arquivo de aliases personalizados para o terminal.
-  - **.zshrc**: Arquivo de configuração do ZSH.
-- **ConfigrarZSH.sh**: Script para configurar o ZSH com Oh My Zsh e o tema Spaceship.
-- **flatpak.sh**: Script para instalar aplicativos via Flatpak.
-- **install.sh**: Script principal para instalar pacotes via Snap e APT, além de configurar aliases e o ZSH.
-- **README.md**: Este arquivo.
-
-## Scripts
-
-### install.sh
-
-Este script realiza a instalação de diversos pacotes utilizando Snap e APT, além de configurar aliases e o ZSH.
-
-#### Pacotes Instalados via Snap
-
-- Adobe Acrobat Reader
-- Beekeeper Studio
-- Bitwarden
-
-#### Pacotes Instalados via APT
-
-- btop
-- Visual Studio Code
-- VSCodium
-- curl
-- batcat
-- eza
-- git
-- GitHub CLI
-- neofetch
-- nodejs
-- npm
-- Spotify
-- flatpak
-- gnome-software-plugin-flatpak
-
-#### Configurações Adicionais
-
-- Copia o arquivo **.bash_aliases** para o diretório home do usuário.
-- Configura o ZSH com Oh My Zsh.
-
-#### Execução
+## 📁 Estrutura | Structure
 
 ```
-.\install.sh
+UbuntuPowerUp/
+├── assets/
+│   ├── .bash_aliases        → Atalhos personalizados | Custom terminal shortcuts
+│   └── .zshrc               → Configuração ZSH      | ZSH theme and plugin config
+├── ConfigurarZSH.sh         → ZSH + OhMyZsh setup with themes/plugins
+├── flatpak.sh               → Instala apps via Flatpak | Installs apps via Flatpak
+├── install.sh               → Instala Snap/apt e configura terminal
+└── README.md                → Este arquivo | This file
 ```
 
-### flatpak.sh
+---
 
-Este script instala diversos aplicativos utilizando o Flatpak.
+## 🧠 O que os scripts fazem? | What do the scripts do?
 
-#### Aplicativos Instalados via Flatpak
+### 🔧 `install.sh` – Snap + APT Setup
 
-- Telegram
-- Audacity
-- Extension Manager
-- Soundux
-- System Monitor
-- Master PDF Editor
-- GIMP
-- PulseAudio Volume Control
-- Upscayl
+Instala pacotes essenciais via **APT** e **Snap**, configura **aliases**, o shell ZSH com tema Spaceship 🚀.
 
-#### Execução
+📦 **APT Packages**
 
+- `btop` 📊
+- `batcat` 🦇
+- `eza` 📁
+- `curl` 🌐
+- `git` 🔧
+- `gh` (GitHub CLI) 🐙
+- `neofetch` 📷
+- `nodejs` / `npm` 📦
+- `flatpak`, `gnome-software-plugin-flatpak`
+- `vscodium` 🧬
+- `code` (VSCode) 💻
+- `spotify` 🎧
+
+📦 **Snap Packages**
+
+- Adobe Acrobat Reader 📄
+- Beekeeper Studio 🐝
+- Bitwarden 🔐
+
+### 🚀 `flatpak.sh` – Flatpak Installer com Spinner & Emojis
+
+Instala apps via [Flathub](https://flathub.org), com animações e feedback visual bonitão 😎
+
+📦 **Aplicativos Instalados:**
+| App | Ícone | Flatpak ID |
+|--------------------------|-------|--------------------------------------------|
+| Telegram | 💬 | `org.telegram.desktop` |
+| Extension Manager | 🧩 | `com.mattjakeman.ExtensionManager` |
+| Mission Center (Monitor) | 📊 | `io.missioncenter.MissionCenter` |
+| GIMP (Editor de Imagens) | 🎨 | `org.gimp.GIMP` |
+| LocalSend (Compartilhamento local) | 📤 | `org.localsend.localsend_app` |
+
+✨ O script inclui:
+
+- Spinner animado para cada instalação
+- Cores e emojis de status ✅ ❌
+- Execução automática do **LocalSend** ao final
+
+### 💫 `ConfigurarZSH.sh` – ZSH Turbo com Tema Spaceship
+
+Automatiza:
+
+- Instalação do **ZSH**
+- Instalação do **Oh My Zsh**
+- Ativação do tema **Spaceship** 🛸
+- Instalação de plugins de produtividade como `zsh-autosuggestions` e `zsh-syntax-highlighting`
+
+---
+
+## 🛠️ Como usar? | How to use
+
+### 1️⃣ Clone o repositório:
+
+```bash
+git clone https://github.com/fhilippe-gabriel/UbuntuPowerUp.git
+cd UbuntuPowerUp
 ```
-.\flatpak.sh
+
+### 2️⃣ Execute os scripts:
+
+```bash
+chmod +x *.sh
+
+./install.sh           # APT + Snap + Aliases + ZSH
+./flatpak.sh           # Flatpak apps + Spinner
+./ConfigurarZSH.sh     # Tema ZSH + plugins
 ```
 
-### ConfigrarZSH.sh
+---
 
-Este script configura o ZSH com Oh My Zsh e o tema Spaceship, além de instalar plugins adicionais.
+## 💡 Por que usar? | Why use it?
 
-#### Execução
+✅ Instalação com visual agradável  
+✅ Scripts organizados e reutilizáveis  
+✅ Perfeito para devs, editores, entusiastas de produtividade  
+✅ Ideal para pós-instalação de Ubuntu e derivados
 
-```
-.\ConfigrarZSH.sh
-```
+---
 
-## Arquivos de Configuração
+## 🤝 Contribua com a comunidade!
 
-### .bash_aliases
+Contribuições são muito bem-vindas!  
+Você pode:
 
-Contém aliases personalizados para facilitar o uso do terminal.
+- Abrir uma [issue](https://github.com/fhilippe-gabriel/UbuntuPowerUp/issues)
+- Enviar um Pull Request ✨
+- Sugerir novos apps, temas ou melhorias 🧠
 
-### .zshrc
+---
 
-Arquivo de configuração do ZSH com o tema Spaceship e plugins adicionais.
+## 📄 Licença
 
-## Como Executar
+MIT License © [Fhilippe Gabriel](https://github.com/fhilippe-gabriel)
 
-1.  Clone o repositório:
+---
 
-    ```
-    git clone <URL_DO_REPOSITORIO>
-     cd script-install-ubuntu
-    ```
-
-    ou
-
-    ```
-    gh repo clone fhilippe-gabriel/script-install-ubuntu
-    ```
-
-2.  Execute os scripts conforme necessário:
-    ```
-    .\install.sh
-    .\flatpak.sh
-    .\ConfigrarZSH.sh
-    ```
-
-## Contribuição
-
-Sinta-se à vontade para abrir issues e pull requests para melhorias e correções.
-
-## Licença
-
-Este projeto está licenciado sob a MIT License.
+> 💬 _Let your Ubuntu be as productive as you are._

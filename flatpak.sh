@@ -1,40 +1,71 @@
 #!/bin/bash
+
+# Cores
+CYAN='\033[1;36m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+RESET='\033[0m'
+
+# Spinner
+spinner() {
+    local pid=$!
+    local delay=0.1
+    local spinstr='|/-\'
+    tput civis
+    while kill -0 $pid 2>/dev/null; do
+        local temp=${spinstr#?}
+        printf " [%c]  " "$spinstr"
+        spinstr=$temp${spinstr%"$temp"}
+        sleep $delay
+        printf "\b\b\b\b\b\b"
+    done
+    tput cnorm
+    printf "    \b\b\b\b"
+}
+
+print_step() {
+    echo -e "${CYAN}🔧 $1...${RESET}"
+}
+
+print_success() {
+    echo -e "${GREEN}✅ $1${RESET}"
+}
+
+print_fail() {
+    echo -e "${RED}❌ $1${RESET}"
+}
+
 echo
-echo "Iniciando instalação de flatpaks"
+echo -e "${YELLOW}✨ Iniciando instalação de Flatpaks...${RESET}"
 echo
 
-# Atualiza a lista de pacotes
-sudo apt update
+# Atualização do sistema
+print_step "Atualizando lista de pacotes"
+(sudo apt update -y & spinner) && print_success "Lista de pacotes atualizada"
 
-# Executa atualização do sistema
-sudo apt upgrade -y
+print_step "Atualizando o sistema"
+(sudo apt upgrade -y & spinner) && print_success "Sistema atualizado"
 
-# Instala o telegram via flatpak
-flatpak install flathub org.telegram.desktop -y
+# Flatpaks
 
-# Instala o audacity  via flatpak
-flatpak install flathub org.audacityteam.Audacity -y
+print_step "📦 Instalando Telegram"
+(flatpak install -y flathub org.telegram.desktop & spinner) && print_success "Telegram instalado"
 
-# Instala o Exrensio Manager via flatpak
-flatpak install flathub com.mattjakeman.ExtensionManager -y
+print_step "📦 Instalando Extension Manager"
+(flatpak install -y flathub com.mattjakeman.ExtensionManager & spinner) && print_success "Extension Manager instalado"
 
-# Instala o Soundux via flatpak
-flatpak install flathub io.github.Soundux -y
+print_step "📦 Instalando Monitor do Sistema (Mission Center)"
+(flatpak install -y flathub io.missioncenter.MissionCenter & spinner) && print_success "Mission Center instalado"
 
-# Instala o Monitor do sistema via flatpak
-flatpak install flathub io.missioncenter.MissionCenter -y
+print_step "🎨 Instalando GIMP"
+(flatpak install -y flathub org.gimp.GIMP & spinner) && print_success "GIMP instalado"
 
-# Instala o Master PDF via flatpak
-flatpak install flathub net.codeindustry.MasterPDFEditor -y
+print_step "📤 Instalando LocalSend"
+(flatpak install -y flathub org.localsend.localsend_app & spinner) && print_success "LocalSend instalado"
 
-# Instala o  Gimp via flatpak
-flatpak install flathub org.gimp.GIMP -y
+print_step "🚀 Executando LocalSend"
+(flatpak run org.localsend.localsend_app & spinner) && print_success "LocalSend iniciado"
 
-# Instala o PulseAudio Volume Control via flatpak
-flatpak install flathub org.pulseaudio.pavucontrol -y
-
-# Instala o Telegram via flatpak
-flatpak install flathub org.telegram.desktop
-
-# Instala o  via flatpak
-flatpak install flathub org.upscayl.Upscayl
+echo
+echo -e "${GREEN}🎉 Todos os Flatpaks foram instalados com sucesso!${RESET}"
