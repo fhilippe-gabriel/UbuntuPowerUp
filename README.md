@@ -41,9 +41,7 @@ Este projeto automatiza a configuração de uma workstation Ubuntu com ZSH perso
 
 ##### 📦 Snaps
 
-- 🔐 Bitwarden
-- 🐝 Beekeeper Studio
-- 📄 Adobe Acrobat Reader
+- 🎧 Spotify
 
 ##### 🧠 Extras
 
@@ -177,9 +175,7 @@ This project automates the setup of an Ubuntu workstation with a personalized ZS
 
 ##### 📦 Snaps
 
-- 🔐 Bitwarden
-- 🐝 Beekeeper Studio
-- 📄 Adobe Acrobat Reader
+- 🎧 Spotify
 
 ---
 
@@ -249,7 +245,7 @@ chmod +x *.sh
 
 ---
 
-## 👨‍💻 Developer
+## 👨‍💻 Desenvolvedor
 
 **Fhilippe**  
 💼 [GitHub](https://github.com/fhilippe-gabriel)  
