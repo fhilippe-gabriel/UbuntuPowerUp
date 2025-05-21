@@ -245,7 +245,7 @@ chmod +x *.sh
 
 ---
 
-## 👨‍💻 Desenvolvedor
+## 👨‍💻 Development
 
 **Fhilippe**  
 💼 [GitHub](https://github.com/fhilippe-gabriel)  
