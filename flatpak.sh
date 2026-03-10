@@ -1,71 +1,95 @@
 #!/bin/bash
 
-# Cores
+# Cores Vibrantes
 CYAN='\033[1;36m'
 GREEN='\033[1;32m'
 YELLOW='\033[1;33m'
 RED='\033[1;31m'
+PURPLE='\033[1;35m'
 RESET='\033[0m'
 
-# Spinner
+# Spinner (O charme do carregamento)
 spinner() {
     local pid=$!
     local delay=0.1
     local spinstr='|/-\'
-    tput civis
+    tput civis # Esconde o cursor
     while kill -0 $pid 2>/dev/null; do
         local temp=${spinstr#?}
-        printf " [%c]  " "$spinstr"
+        printf " [${PURPLE}%c${RESET}]  " "$spinstr"
         spinstr=$temp${spinstr%"$temp"}
         sleep $delay
         printf "\b\b\b\b\b\b"
     done
-    tput cnorm
+    tput cnorm # Mostra o cursor
     printf "    \b\b\b\b"
 }
 
 print_step() {
-    echo -e "${CYAN}🔧 $1...${RESET}"
+    echo -ne "${CYAN}🚀 $1...${RESET}"
 }
 
 print_success() {
-    echo -e "${GREEN}✅ $1${RESET}"
+    echo -e "${GREEN} ✅ Pronto!${RESET}"
 }
 
 print_fail() {
-    echo -e "${RED}❌ $1${RESET}"
+    echo -e "${RED} ❌ Deu ruim em: $1${RESET}"
 }
 
-echo
-echo -e "${YELLOW}✨ Iniciando instalação de Flatpaks...${RESET}"
-echo
+echo -e "${YELLOW}====================================================${RESET}"
+echo -e "${YELLOW}   📦 FLATPAK PARTY - Instalando a Suíte de Elite   ${RESET}"
+echo -e "${YELLOW}====================================================${RESET}"
 
-# Atualização do sistema
-print_step "Atualizando lista de pacotes"
-(sudo apt update -y & spinner) && print_success "Lista de pacotes atualizada"
+# Preparação
+print_step "Sincronizando com a Matrix (Apt Update)"
+(sudo apt update -y &>/dev/null & spinner) && print_success
 
-print_step "Atualizando o sistema"
-(sudo apt upgrade -y & spinner) && print_success "Sistema atualizado"
+print_step "Subindo o level do sistema (Apt Upgrade)"
+(sudo apt upgrade -y &>/dev/null & spinner) && print_success
 
-# Flatpaks
+# Seção de Flatpaks
+echo -e "\n${PURPLE}📥 Baixando os brinquedos novos...${RESET}\n"
 
-print_step "📦 Instalando Telegram"
-(flatpak install -y flathub org.telegram.desktop & spinner) && print_success "Telegram instalado"
+# Telegram
+print_step "Instalando Telegram (Fofoca em alta velocidade)"
+(flatpak install -y flathub org.telegram.desktop &>/dev/null & spinner) && print_success
 
-print_step "📦 Instalando Extension Manager"
-(flatpak install -y flathub com.mattjakeman.ExtensionManager & spinner) && print_success "Extension Manager instalado"
+# Extension Manager
+print_step "Instalando Extension Manager (Tunando o GNOME)"
+(flatpak install -y flathub com.mattjakeman.ExtensionManager &>/dev/null & spinner) && print_success
 
-print_step "📦 Instalando Monitor do Sistema (Mission Center)"
-(flatpak install -y flathub io.missioncenter.MissionCenter & spinner) && print_success "Mission Center instalado"
+# Mission Center
+print_step "Instalando Mission Center (Olhando o motor do PC)"
+(flatpak install -y flathub io.missioncenter.MissionCenter &>/dev/null & spinner) && print_success
 
-print_step "🎨 Instalando GIMP"
-(flatpak install -y flathub org.gimp.GIMP & spinner) && print_success "GIMP instalado"
+# GIMP
+print_step "Instalando GIMP (Design sem pagar assinatura)"
+(flatpak install -y flathub org.gimp.GIMP &>/dev/null & spinner) && print_success
 
-print_step "📤 Instalando LocalSend"
-(flatpak install -y flathub org.localsend.localsend_app & spinner) && print_success "LocalSend instalado"
+# LocalSend
+print_step "Instalando LocalSend (AirDrop pra todo mundo)"
+(flatpak install -y flathub org.localsend.localsend_app &>/dev/null & spinner) && print_success
 
-print_step "🚀 Executando LocalSend"
-(flatpak run org.localsend.localsend_app & spinner) && print_success "LocalSend iniciado"
+# Ignition
+print_step "Instalando Ignition (Dando a partida)"
+(flatpak install -y flathub io.github.flattool.Ignition &>/dev/null & spinner) && print_success
 
-echo
-echo -e "${GREEN}🎉 Todos os Flatpaks foram instalados com sucesso!${RESET}"
+# Passwords
+print_step "Instalando Passwords (O cofre secreto)"
+(flatpak install -y flathub io.gitlab.elescoute.password &>/dev/null & spinner) && print_success
+
+# Video Downloader
+print_step "Instalando Video Downloader (Caçador de vídeos)"
+(flatpak install -y flathub com.github.unrud.VideoDownloader &>/dev/null & spinner) && print_success
+
+# Warehouse
+print_step "Instalando Warehouse (O armazém de Flatpaks)"
+(flatpak install -y flathub io.github.flattool.Warehouse &>/dev/null & spinner) && print_success
+
+echo -e "\n${GREEN}====================================================${RESET}"
+echo -e "${GREEN}🎉 TUDO PRONTO! Seus Flatpaks estão voando! 🎉${RESET}"
+echo -e "${GREEN}====================================================${RESET}"
+
+# Opcional: Rodar o LocalSend no final (tire o comentário se quiser que abra sozinho)
+# flatpak run org.localsend.localsend_app &

@@ -1,18 +1,36 @@
-# 🚀 Ubuntu Workstation Booster | Instalador Automático
+# 🚀 Ubuntu Workstation Booster | Automatic Setup
 
 🌐 **Languages: [🇧🇷 Português](#pt-br) | [🇺🇸 English](#en)**
 
 ---
 
-## 🇧🇷 Português
+# 🇧🇷 Português <a name="pt-br"></a>
 
-### 🎯 Visão Geral
+## 🎯 Visão Geral
 
-Este projeto automatiza a configuração de uma workstation Ubuntu com ZSH personalizado, ferramentas de desenvolvimento e aplicativos essenciais via APT, Snap e Flatpak — tudo com um visual moderno e funcional, incluindo emojis, cores e feedback com animações.
+O **Ubuntu Workstation Booster** é um conjunto de scripts que automatiza a configuração de uma workstation Ubuntu para desenvolvimento.
+
+Ele instala ferramentas essenciais, configura um ambiente **ZSH moderno**, adiciona **aliases úteis**, instala **aplicativos via Flatpak**, e deixa o terminal com um visual profissional.
+
+Tudo com **feedback visual, cores, emojis e animações no terminal**.
 
 ---
 
-### 📁 Estrutura
+## ✨ Recursos
+
+- 🚀 Setup automatizado de ambiente Ubuntu
+- 🧠 Instalação e configuração do **ZSH + Oh My Zsh**
+- 🎨 Tema moderno **Spaceship Prompt**
+- ⚡ Gerenciamento de plugins com **Zinit**
+- 📦 Instalação de ferramentas via **APT**
+- 🎧 Apps adicionais via **Snap**
+- 🍱 Aplicativos modernos via **Flatpak / Flathub**
+- 🔧 Aliases úteis para produtividade
+- 💻 Ambiente pronto para desenvolvimento
+
+---
+
+## 📁 Estrutura do Projeto
 
 ```
 .
@@ -27,126 +45,216 @@ Este projeto automatiza a configuração de uma workstation Ubuntu com ZSH perso
 
 ---
 
-### 📦 Scripts
+# 📦 Scripts
 
-#### 🛠️ `install.sh`
+## 🛠️ install.sh
 
-- Instala pacotes via APT e Snap
-- Configura o shell ZSH
-- Aplica aliases personalizados
+Script principal responsável por instalar ferramentas base do sistema.
 
-##### ✔️ Pacotes APT
+### Pacotes instalados via APT
 
-- `btop`, `curl`, `batcat`, `eza`, `git`, `gh`, `neofetch`, `nodejs`, `npm`, `flatpak`, `gnome-software-plugin-flatpak`
+- btop
+- curl
+- bat
+- eza
+- git
+- fastfetch
+- nodejs
+- npm
+- zsh
+- flatpak
+- gnome-tweaks
+- gnome-session
+- gnome-software-plugin-flatpak
 
-##### 📦 Snaps
+### Ferramentas adicionais
 
-- 🎧 Spotify
+Também instala:
 
-##### 🧠 Extras
+- **GitHub CLI (`gh`)**
+- **Spotify via Snap**
 
-- Copia `.bash_aliases` e configura o ZSH
+Além disso:
 
----
-
-#### 📂 `flatpak.sh`
-
-Instala via Flatpak com animação de carregamento e mensagens estilizadas:
-
-| Aplicativo           | Flatpak ID                         | Ícone |
-| -------------------- | ---------------------------------- | ----- |
-| 📱 Telegram          | `org.telegram.desktop`             | 📨    |
-| 🧩 Extension Manager | `com.mattjakeman.ExtensionManager` | 🧩    |
-| 📊 System Monitor    | `io.missioncenter.MissionCenter`   | 📈    |
-| 📸 LocalSend         | `org.localsend.localsend_app`      | 📤    |
-
-No final, o `LocalSend` é executado automaticamente.
-
----
-
-#### ✨ `ConfigurarZSH.sh`
-
-- Instala o **Oh My Zsh**
-- Aplica o tema **Spaceship**
-- Adiciona plugins úteis:
-  - `zsh-autosuggestions`
-  - `zsh-completions`
-  - `zsh-history-substring-search`
-  - `fast-syntax-highlighting`
-  - `yarn-completion`
-- Adiciona suporte ao plugin `alias-finder` ✅
+- Configura o **Git**
+- Copia **aliases personalizados**
+- Configura suporte ao **Flatpak**
 
 ---
 
-### 🧩 Configurações
+## 📂 flatpak.sh
 
-#### `.bash_aliases`
+Script responsável por instalar aplicativos modernos via **Flathub** com animações de carregamento.
 
-Inclui aliases para facilitar comandos, como:
+### Aplicativos instalados
+
+| Aplicativo        | Função                       |
+| ----------------- | ---------------------------- |
+| Telegram          | Mensagens                    |
+| Extension Manager | Gerenciar extensões do GNOME |
+| Mission Center    | Monitor de sistema moderno   |
+| GIMP              | Editor de imagens            |
+| LocalSend         | Compartilhamento de arquivos |
+| Ignition          | Gerenciador de Flatpaks      |
+| Passwords         | Gerenciador de senhas        |
+| Video Downloader  | Baixar vídeos                |
+| Warehouse         | Gerenciador de Flatpaks      |
+
+---
+
+## ✨ ConfigurarZSH.sh
+
+Script responsável por configurar o ambiente ZSH completo.
+
+### O que ele instala
+
+- **Oh My Zsh**
+- **Spaceship Prompt**
+- **Zinit (gerenciador de plugins)**
+
+### Plugins instalados
+
+- fast-syntax-highlighting
+- zsh-autosuggestions
+- zsh-history-substring-search
+- zsh-completions
+- yarn-completion
+- alias-finder
+
+---
+
+# 🧩 Arquivos de Configuração
+
+## `.bash_aliases`
+
+Contém atalhos úteis para o terminal.
+
+Exemplos:
 
 ```bash
-alias up-full='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade'
+alias up-full='sudo apt update && sudo apt upgrade -y'
 alias rb='sudo reboot'
 alias pw='sudo poweroff'
-alias ~='cd ~'
+alias nf='fastfetch'
+alias ls='eza'
+alias cat='batcat'
 ```
 
-#### `.zshrc`
+Também inclui atalhos para:
 
-Personalizado com:
-
-- Tema Spaceship 🚀
-- Plugins úteis
-- Integração com Zinit
-- Comportamento otimizado
+- Docker
+- Laravel
+- NPM
+- gerenciamento de pacotes
 
 ---
 
-### ▶️ Como usar
+## `.zshrc`
+
+Configuração personalizada do ZSH contendo:
+
+- Tema **Spaceship**
+- Plugins extras
+- Integração com **Zinit**
+- Integração com `.bash_aliases`
+- Prompt customizado
+
+---
+
+# ▶️ Como usar
+
+Clone o repositório:
 
 ```bash
 git clone https://github.com/fhilippe-gabriel/script-install-ubuntu
-cd script-install-ubuntu
+```
 
+Entre na pasta:
+
+```bash
+cd script-install-ubuntu
+```
+
+Dê permissão aos scripts:
+
+```bash
 chmod +x *.sh
+```
+
+Execute os scripts:
+
+```bash
 ./install.sh
 ./flatpak.sh
 ./ConfigurarZSH.sh
 ```
 
----
+Após finalizar, reinicie a sessão ou execute:
 
-## 👨‍💻 Desenvolvedor
-
-**Fhilippe**  
-💼 [GitHub](https://github.com/fhilippe-gabriel)  
-📧 [fhilippedev@gmail.com](mailto:fhilippedev@gmail.com)
+```bash
+zsh
+```
 
 ---
 
-## 🤝 Contribua!
+# 👨‍💻 Desenvolvedor
 
-Sinta-se livre para enviar PRs, issues ou sugestões. Bora turbinar esse setup juntos! 🔧
+**Fhilippe**
 
----
+GitHub
+https://github.com/fhilippe-gabriel
 
-## 📜 Licença
-
-MIT
-
----
+Email
+[fhilippedev@gmail.com](mailto:fhilippedev@gmail.com)
 
 ---
 
-## 🇺🇸 English
+# 🤝 Contribuição
 
-### 🎯 Overview
+Contribuições são bem-vindas!
 
-This project automates the setup of an Ubuntu workstation with a personalized ZSH shell, developer tools, and essential apps using APT, Snap, and Flatpak — with cool visuals, emojis, colors, and spinners.
+Você pode:
+
+- abrir **Issues**
+- enviar **Pull Requests**
+- sugerir novas ferramentas
+- melhorar a documentação
 
 ---
 
-### 📁 Structure
+# 📜 Licença
+
+MIT License
+
+---
+
+---
+
+# 🇺🇸 English <a name="en"></a>
+
+## 🎯 Overview
+
+**Ubuntu Workstation Booster** is a set of scripts that automates the setup of an Ubuntu development workstation.
+
+It installs essential tools, configures a **modern ZSH environment**, adds **useful aliases**, installs **Flatpak applications**, and enhances the terminal experience with colors, emojis and animations.
+
+---
+
+## ✨ Features
+
+- 🚀 Automated Ubuntu setup
+- 🧠 **ZSH + Oh My Zsh** configuration
+- 🎨 Modern **Spaceship Prompt**
+- ⚡ Plugin management with **Zinit**
+- 📦 Core tools via **APT**
+- 🎧 Additional apps via **Snap**
+- 🍱 Modern applications via **Flatpak / Flathub**
+- 🔧 Productivity aliases
+- 💻 Developer-ready environment
+
+---
+
+## 📁 Project Structure
 
 ```
 .
@@ -161,104 +269,177 @@ This project automates the setup of an Ubuntu workstation with a personalized ZS
 
 ---
 
-### 📦 Scripts
+# 📦 Scripts
 
-#### 🛠️ `install.sh`
+## 🛠️ install.sh
 
-- Installs via APT and Snap
-- Configures ZSH
-- Copies aliases
+Main script responsible for installing system tools.
 
-##### ✔️ APT Packages
+### APT packages
 
-- `btop`, `curl`, `batcat`, `eza`, `git`, `gh`, `neofetch`, `nodejs`, `npm`, `flatpak`, `gnome-software-plugin-flatpak`
+- btop
+- curl
+- bat
+- eza
+- git
+- fastfetch
+- nodejs
+- npm
+- zsh
+- flatpak
+- gnome-tweaks
+- gnome-session
+- gnome-software-plugin-flatpak
 
-##### 📦 Snaps
+### Extra tools
 
-- 🎧 Spotify
+Also installs:
 
----
+- **GitHub CLI (`gh`)**
+- **Spotify via Snap**
 
-#### 📂 `flatpak.sh`
+It also:
 
-Installs Flatpaks with spinner and styled messages:
-
-| App                  | Flatpak ID                         | Icon |
-| -------------------- | ---------------------------------- | ---- |
-| 📱 Telegram          | `org.telegram.desktop`             | 📨   |
-| 🧩 Extension Manager | `com.mattjakeman.ExtensionManager` | 🧩   |
-| 📊 System Monitor    | `io.missioncenter.MissionCenter`   | 📈   |
-| 📸 LocalSend         | `org.localsend.localsend_app`      | 📤   |
-
-`LocalSend` runs at the end.
-
----
-
-#### ✨ `ConfigurarZSH.sh`
-
-- Installs **Oh My Zsh**
-- Applies **Spaceship** theme
-- Adds plugins:
-  - `zsh-autosuggestions`
-  - `zsh-completions`
-  - `zsh-history-substring-search`
-  - `fast-syntax-highlighting`
-  - `yarn-completion`
-- Adds `alias-finder` plugin ✅
+- Configures **Git**
+- Copies **aliases**
+- Enables **Flatpak support**
 
 ---
 
-### 🧩 Config Files
+## 📂 flatpak.sh
 
-#### `.bash_aliases`
+Installs modern applications via **Flathub** with a spinner animation.
 
-Contains helpful terminal shortcuts like:
+### Installed apps
+
+| App               | Purpose                 |
+| ----------------- | ----------------------- |
+| Telegram          | Messaging               |
+| Extension Manager | Manage GNOME extensions |
+| Mission Center    | Modern system monitor   |
+| GIMP              | Image editing           |
+| LocalSend         | File sharing            |
+| Ignition          | Flatpak manager         |
+| Passwords         | Password manager        |
+| Video Downloader  | Video downloader        |
+| Warehouse         | Flatpak manager         |
+
+---
+
+## ✨ ConfigurarZSH.sh
+
+Configures the full ZSH environment.
+
+### Installs
+
+- **Oh My Zsh**
+- **Spaceship Prompt**
+- **Zinit plugin manager**
+
+### Plugins
+
+- fast-syntax-highlighting
+- zsh-autosuggestions
+- zsh-history-substring-search
+- zsh-completions
+- yarn-completion
+- alias-finder
+
+---
+
+# 🧩 Configuration Files
+
+## `.bash_aliases`
+
+Provides useful terminal shortcuts such as:
 
 ```bash
-alias up-full='sudo apt update && sudo apt upgrade && sudo apt full-upgrade && sudo apt dist-upgrade'
+alias up-full='sudo apt update && sudo apt upgrade -y'
 alias rb='sudo reboot'
 alias pw='sudo poweroff'
-alias ~='cd ~'
+alias nf='fastfetch'
+alias ls='eza'
+alias cat='batcat'
 ```
 
-#### `.zshrc`
+Also includes shortcuts for:
 
-ZSH config with:
-
-- Spaceship theme
-- Extra plugins
-- Zinit loader
+- Docker
+- Laravel
+- NPM
+- Package management
 
 ---
 
-### ▶️ How to use
+## `.zshrc`
+
+Custom ZSH configuration including:
+
+- **Spaceship theme**
+- Plugin loading
+- **Zinit integration**
+- Alias support
+
+---
+
+# ▶️ How to Use
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/fhilippe-gabriel/script-install-ubuntu
-cd script-install-ubuntu
+```
 
+Enter the folder:
+
+```bash
+cd script-install-ubuntu
+```
+
+Make scripts executable:
+
+```bash
 chmod +x *.sh
+```
+
+Run the scripts:
+
+```bash
 ./install.sh
 ./flatpak.sh
 ./ConfigurarZSH.sh
 ```
 
----
+After installation restart your session or run:
 
-## 👨‍💻 Development
-
-**Fhilippe**  
-💼 [GitHub](https://github.com/fhilippe-gabriel)  
-📧 [fhilippedev@gmail.com](mailto:fhilippedev@gmail.com)
+```bash
+zsh
+```
 
 ---
 
-## 🤝 Contribute!
+# 👨‍💻 Developer
 
-Feel free to open issues, send PRs or suggest features. Let’s build an epic Linux setup together! 💻
+**Fhilippe**
+
+GitHub
+https://github.com/fhilippe-gabriel
+
+Email
+[fhilippedev@gmail.com](mailto:fhilippedev@gmail.com)
 
 ---
 
-## 📜 License
+# 🤝 Contribute
+
+Feel free to:
+
+- open **Issues**
+- send **Pull Requests**
+- suggest improvements
+
+---
+
+# 📜 License
 
 MIT

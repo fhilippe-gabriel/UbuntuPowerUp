@@ -11,7 +11,7 @@ alias ~='cd ~'  # Vai para o diretório home
 # === Ferramentas e Comandos Úteis ===
 alias cat='batcat'       # Usa o batcat (bat) em vez do cat, com syntax highlighting
 alias ls='eza'           # Usa eza no lugar de ls, com melhor formatação
-alias nf='neofetch'      # Exibe as informações do sistema de forma visual
+alias nf='fastfetch'      # Exibe as informações do sistema de forma visual
 alias ex='exit'          # Alias para sair do terminal
 alias cl='clear'          # Alias para limpar o terminal
 
@@ -26,6 +26,10 @@ alias aptr='sudo apt remove -y'       # Remove pacotes com apt sem precisar conf
 alias snapr='sudo snap remove'        # Remove pacotes Snap
 alias aptc='sudo apt autoclean -y'    # Limpa o cache de pacotes do apt
 alias aptrc='sudo apt-get autoremove -y'  # Remove pacotes desnecessários
+
+# === Docker ===
+alias docker-on='sudo systemctl start docker'
+alias docker-off='sudo systemctl stop docker'
 
 # === Alias para reinicialização e desligamento ===
 alias rb='sudo reboot'       # Alias para reiniciar
